@@ -49,8 +49,8 @@ function createTemplate (data) {
             <a href="/">Home</a>
         </div>
         <hr/>
-        <h3> ${heading}</h3>
-        <div> ${date}</div>
+        <h3>${heading}</h3>
+        <div>${date}</div>
         <div>
             ${content}
         </div>
@@ -66,7 +66,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-    var articleName = req.param.articleName;
+    var articleName = req.params.articleName;
  res.sendFile(createTemplate(articles[articleName]));
 });
 
